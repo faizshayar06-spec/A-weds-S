@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Nikkah Ceremony - Mohammed Ahmed Khan & Sahana Khan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="ambientBubbleCanvas"></canvas>
+
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-violin-and-piano-2350.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="app-viewport">
+
+    <div id="envelope-overlay">
+      <div class="royal-envelope-wrapper">
+        
+        <div class="flap side-left">
+          <svg class="floral-svg left-art" viewBox="0 0 100 350">
+            <g class="branch-glow">
+              <path d="M10,180 Q35,140 25,90 Q40,60 30,20" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M10,180 Q35,220 25,270 Q40,300 30,340" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="28" cy="95" r="5" class="floral-bud bud-1" />
+              <circle cx="38" cy="65" r="6" class="floral-bud bud-2" />
+              <circle cx="30" cy="22" r="4" class="floral-bud bud-3" />
+              <circle cx="28" cy="265" r="5" class="floral-bud bud-4" />
+              <circle cx="38" cy="295" r="6" class="floral-bud bud-5" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="flap side-right">
+          <svg class="floral-svg right-art" viewBox="0 0 100 350">
+            <g class="branch-glow">
+              <path d="M90,180 Q65,140 75,90 Q60,60 70,20" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M90,180 Q65,220 75,270 Q60,300 70,340" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="72" cy="95" r="5" class="floral-bud bud-1" />
+              <circle cx="62" cy="65" r="6" class="floral-bud bud-2" />
+              <circle cx="70" cy="22" r="4" class="floral-bud bud-3" />
+              <circle cx="72" cy="265" r="5" class="floral-bud bud-4" />
+              <circle cx="62" cy="295" r="6" class="floral-bud bud-5" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="flap flap-bottom">
+          <svg class="floral-svg bottom-crest" viewBox="0 0 300 150">
+            <g class="branch-glow">
+              <path d="M150,140 Q110,80 70,90 Q30,110 10,130" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M150,140 Q190,80 230,90 Q270,110 290,130" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="150" cy="70" r="10" class="floral-bud bud-center" />
+              <circle cx="110" cy="78" r="7" class="floral-bud bud-6" />
+              <circle cx="190" cy="78" r="7" class="floral-bud bud-7" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="flap flap-top" id="topFlap">
+          <svg class="floral-svg top-crest" viewBox="0 0 300 150">
+            <g class="branch-glow">
+              <path d="M150,10 Q110,70 70,60 Q30,40 10,20" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M150,10 Q190,70 230,60 Q270,40 290,20" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="150" cy="80" r="10" class="floral-bud bud-center" />
+              <circle cx="110" cy="72" r="7" class="floral-bud bud-8" />
+              <circle cx="190" cy="72" r="7" class="floral-bud bud-9" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="inner-envelope-light" id="innerLight"></div>
+
+        <div class="wax-seal-container" id="waxSeal">
+          <div class="wax-ring">
+            <span class="monogram-text">A & S</span>
+          </div>
+          <div class="seal-glow-halo"></div>
+        </div>
+      </div>
+
+      <div class="envelope-tap-instruction">
+        <span class="star-sparkle">✦</span> Tap seal to open <span class="star-sparkle">✦</span>
+      </div>
+    </div>
+
+    <header class="sacred-hero-section mehrab-container">
+      
+      <div class="holy-shrine-frame">
+        <div class="minaret-pillar left-pillar"></div>
+        <div class="holy-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80" alt="Al-Masjid an-Nabawi Madina" class="madina-banner-img" />
+          <div class="shrine-caption">Al-Madinah Al-Munawwarah</div>
+        </div>
+        <div class="minaret-pillar right-pillar"></div>
+      </div>
+
+      <div class="palace-arch-window">
+        <div class="arch-crest-icon">🕌</div>
+        <span class="ceremony-tag">WELCOME TO THE NIKKAH CEREMONY OF</span>
+
+        <div class="couple-names-wrap">
+          <h1 class="groom-royal-name">Mohammed Ahmed Khan</h1>
+          <div class="sacred-knot">&</div>
+          <h1 class="bride-royal-name">Sahana Khan</h1>
+        </div>
+
+        <div class="soft-gold-divider">
+          <span class="divider-line"></span>
+          <span class="divider-gem">✦ ❖ ✦</span>
+          <span class="divider-line"></span>
+        </div>
+      </div>
+
+      <div class="gentle-scroll-hint">
+        <span>Scroll down</span>
+        <div class="arrow-bounce">⌄</div>
+      </div>
+    </header>
+
+    <section class="minaret-block mehrab-container">
+      <div class="block-minaret left-minar"></div>
+      <div class="block-content">
+        <h2 class="script-fancy-title">The Date</h2>
+        <div class="badge-subtitle">✦ Scratch to reveal the date ✦</div>
+
+        <div class="scratch-trio-row">
+          <div class="scratch-col">
+            <div class="arch-scratch-pad">
+              <div class="hidden-number">10</div>
+              <canvas class="scratch-foil-canvas" id="canvasDay"></canvas>
+            </div>
+            <div class="scratch-caption">DAY</div>
+          </div>
+
+          <div class="scratch-col">
+            <div class="arch-scratch-pad">
+              <div class="hidden-number font-sm">January</div>
+              <canvas class="scratch-foil-canvas" id="canvasMonth"></canvas>
+            </div>
+            <div class="scratch-caption">MONTH</div>
+          </div>
+
+          <div class="scratch-col">
+            <div class="arch-scratch-pad">
+              <div class="hidden-number font-md">2027</div>
+              <canvas class="scratch-foil-canvas" id="canvasYear"></canvas>
+            </div>
+            <div class="scratch-caption">YEAR</div>
+          </div>
+        </div>
+      </div>
+      <div class="block-minaret right-minar"></div>
+    </section>
+
+    <section class="minaret-block mehrab-container bg-with-makkah">
+      <div class="makkah-watermark"></div>
+
+      <div class="block-minaret left-minar"></div>
+      <div class="block-content">
+        <div class="bismillah-arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+        <p class="invite-header-line">YOU ARE CORDIALLY INVITED TO CELEBRATE THE NIKKAH OF</p>
+
+        <div class="names-parent-cluster">
+          <h2 class="title-groom">Mohammed Ahmed Khan</h2>
+          <p class="parent-meta">SON OF MR. & MRS. CH. HUSSAINI</p>
+
+          <div class="calligraphy-connector">With</div>
+
+          <h2 class="title-bride">Sahana Khan</h2>
+          <p class="parent-meta">DAUGHTER OF MR. & MRS. CH. FAROOQI</p>
+        </div>
+
+        <div class="urdu-poetry-box">
+          <div class="urdu-shair">دلوں کا تعلق عرش پر طے پاتا ہے، اور زمین پر نکاح کے نور سے جگمگاتا ہے</div>
+          <p class="urdu-translation">"Hearts are bonded in the heavens, and blessed on earth through the sacred light of Nikkah."</p>
+        </div>
+
+        <div class="ayah-golden-frame">
+          <div class="ayah-text-arabic">وَخَلَقْنَاكُمْ أَزْوَاجًا</div>
+          <p class="ayah-eng-quote">"And We created you in pairs."</p>
+          <span class="ayah-reference">(Surah An-Naba 78:8)</span>
+        </div>
+      </div>
+      <div class="block-minaret right-minar"></div>
+    </section>
+
+    <section class="minaret-block mehrab-container">
+      <div class="block-minaret left-minar"></div>
+      <div class="block-content">
+        <h2 class="script-fancy-title">Wedding Timeline</h2>
+        <div class="soft-gold-divider">
+          <span class="divider-line"></span>
+          <span class="divider-gem">✦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <div class="palace-timeline-spine">
+          <div class="golden-pillar-axis"></div>
+
+          <div class="timeline-station station-right">
+            <div class="station-dome-node">✦</div>
+            <div class="station-card">
+              <span class="station-time">6:00 pm</span>
+              <p class="station-name">Guest Arrival and<br>Welcome Drinks</p>
+            </div>
+          </div>
+
+          <div class="timeline-station station-left">
+            <div class="station-dome-node">✦</div>
+            <div class="station-card">
+              <span class="station-time">6:30 pm</span>
+              <p class="station-name">Bride Entrance</p>
+            </div>
+          </div>
+
+          <div class="timeline-station station-right">
+            <div class="station-dome-node">✦</div>
+            <div class="station-card">
+              <span class="station-time">8:30 pm</span>
+              <p class="station-name">Royal Buffet Opening</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block-minaret right-minar"></div>
+    </section>
+
+    <section class="minaret-block mehrab-container">
+      <div class="block-minaret left-minar"></div>
+      <div class="block-content">
+        <h2 class="script-fancy-title">The Celebration Begins</h2>
+        <div class="soft-gold-divider">
+          <span class="divider-line"></span>
+          <span class="divider-gem">✦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <div class="countdown-cluster">
+          <div class="countdown-cell">
+            <span class="cell-num" id="dBox">00</span>
+            <span class="cell-label">Days</span>
+          </div>
+          <span class="cell-colon">:</span>
+          <div class="countdown-cell">
+            <span class="cell-num" id="hBox">00</span>
+            <span class="cell-label">Hours</span>
+          </div>
+          <span class="cell-colon">:</span>
+          <div class="countdown-cell">
+            <span class="cell-num" id="mBox">00</span>
+            <span class="cell-label">Minutes</span>
+          </div>
+          <span class="cell-colon">:</span>
+          <div class="countdown-cell">
+            <span class="cell-num" id="sBox">00</span>
+            <span class="cell-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+      <div class="block-minaret right-minar"></div>
+    </section>
+
+    <section class="minaret-block mehrab-container">
+      <div class="block-minaret left-minar"></div>
+      <div class="block-content">
+        <h2 class="script-fancy-title">Location</h2>
+        <div class="location-city">DUBAI</div>
+        <p class="location-hall">Four Seasons Hotel in Jumeirah,<br>Dana Ballroom</p>
+
+        <div class="venue-grand-view">
+          <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Dana Ballroom Dubai" />
+        </div>
+
+        <div class="map-card-container">
+          <iframe 
+            title="Dana Ballroom Location Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1786510368155!2d55.2396344!3d25.1972018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43501cb6b033%3A0xe54d6f030eb99c3!2sFour%20Seasons%20Resort%20Dubai%20at%20Jumeirah%20Beach!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae" 
+            width="100%" 
+            height="185" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+          <div class="map-top-button">
+            <a href="https://maps.google.com/?q=Four+Seasons+Resort+Dubai+at+Jumeirah+Beach" target="_blank" rel="noopener" class="map-gold-action">
+              <span>Open in Maps</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="block-minaret right-minar"></div>
+    </section>
+
+    <section class="minaret-block mehrab-container">
+      <div class="block-minaret left-minar"></div>
+      <div class="block-content">
+        <h2 class="script-fancy-title">Dress Code</h2>
+        <div class="soft-gold-divider">
+          <span class="divider-line"></span>
+          <span class="divider-gem">✦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <p class="attire-paragraph">
+          We kindly invite our respected guests to dress in<br>
+          <strong>Traditional Pakistani Attire</strong><br>
+          in soft pastel shades.
+        </p>
+
+        <div class="swatch-heading">Recommended shades</div>
+        <div class="swatch-collection">
+          <span class="swatch-round" style="background:#D3C6E5;" title="Lilac"></span>
+          <span class="swatch-round" style="background:#F8D3C5;" title="Peach"></span>
+          <span class="swatch-round" style="background:#F8EDB9;" title="Buttercream"></span>
+          <span class="swatch-round" style="background:#E8C1C1;" title="Dusty Rose"></span>
+          <span class="swatch-round" style="background:#BFCEC2;" title="Mint Green"></span>
+        </div>
+
+        <div class="guideline-card">
+          <p>Please avoid wearing beige, as it has been reserved for the bride and groom.</p>
+          <div class="line-sep"></div>
+          <p>Sage green is reserved exclusively for the bridesmaids.</p>
+        </div>
+
+        <div class="adults-note-card">
+          <h4 class="note-title">Gift Preferences</h4>
+          <p>While we adore your little ones, we have chosen to make this an adults-only celebration. We appreciate your understanding.</p>
+        </div>
+      </div>
+      <div class="block-minaret right-minar"></div>
+    </section>
+
+    <section class="minaret-block mehrab-container">
+      <div class="block-minaret left-minar"></div>
+      <div class="block-content">
+        <h2 class="script-fancy-title">Confirm Your Attendance</h2>
+        <div class="soft-gold-divider">
+          <span class="divider-line"></span>
+          <span class="divider-gem">✦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <p class="rsvp-cutoff">
+          To help us prepare for a joyful celebration,<br>
+          kindly confirm your attendance by<br>
+          <strong>30 November 2026</strong>
+        </p>
+
+        <a href="https://api.whatsapp.com/send?text=I%20confirm%20my%20attendance%20for%20Mohammed%20Ahmed%20Khan%20and%20Sahana%20Khan's%20Nikkah%20Ceremony!" target="_blank" rel="noopener" class="gold-rsvp-btn">
+          RSVP
+        </a>
+      </div>
+      <div class="block-minaret right-minar"></div>
+    </section>
+
+    <footer class="app-footer">
+      <div class="closing-salutation">Hope to see you there</div>
+      <div class="brand-signature-area">
+        <span class="created-with">Designed with love</span>
+        <a href="#" class="studio-signature">webventurestudio</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+  </html>
+
